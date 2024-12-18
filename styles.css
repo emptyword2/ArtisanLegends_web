@@ -1,0 +1,749 @@
+:root {
+    --primary-color: #1a1a2e;
+    --accent-color: #00fff9;
+    --secondary-color: #2d2d44;
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rotating-gear {
+    animation: rotate 4s linear infinite;
+    color: var(--accent-color);
+}
+
+/* 导航链接悬浮效果 */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+/* 动画 */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 通用section样式 */
+.section {
+    min-height: 100vh;
+    padding: 80px 0;
+} 
+
+/* 添加轮播相关样式 */
+.hero-carousel {
+    margin-top: -80px; /* 抵消导航栏的高度 */
+}
+
+.carousel {
+    height: 100vh;
+}
+
+.carousel-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tech-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.7)),
+        url('https://www.transparenttextures.com/patterns/circuit-board.png');
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* 轮播控制钮样式 */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 249, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.carousel-control-next {
+    background: linear-gradient(-90deg, transparent, rgba(0, 255, 249, 0.1));
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* 轮播指示器样式 */
+.carousel-indicators {
+    bottom: 50px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.carousel-indicators button.active {
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--accent-color);
+} 
+
+/* 团队介绍部分样式 */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 249, 0.3);
+}
+
+.member-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.member-card {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.member-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 255, 249, 0.3);
+}
+
+.member-avatar {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.member-skills span {
+    background: rgba(0, 255, 249, 0.1);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent-color);
+} 
+
+/* 作品展示区样式 */
+.project-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.project-card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-preview {
+    position: relative;
+    height: 200px;
+    background: var(--primary-color);
+}
+
+.model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-details-btn {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transform: translateY(20px);
+    transition: all 0.3s;
+}
+
+.project-card:hover .view-details-btn {
+    transform: translateY(0);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.project-tags span {
+    background: rgba(0, 255, 249, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* 项目详情模态框样式 */
+.project-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 46, 0.95);
+    z-index: 1000;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+.project-modal.active {
+    display: block;
+}
+
+.modal-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    position: relative;
+    cursor: default;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    background: rgba(0, 255, 249, 0.1);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-gallery {
+    margin-bottom: 2rem;
+}
+
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-color);
+} 
+
+/* AI对话平台样式 */
+.chat-container {
+    display: flex;
+    height: calc(100vh - 80px);
+    background: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 侧边栏样式 */
+.chat-sidebar {
+    width: 280px;
+    background: var(--secondary-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--accent-color);
+}
+
+.new-chat-btn {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.new-chat-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 255, 249, 0.3);
+}
+
+.chat-history {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.history-group {
+    margin-bottom: 1.5rem;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.history-item, .category-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.history-item:hover, .category-item:hover {
+    background: rgba(0, 255, 249, 0.1);
+}
+
+.history-item.active {
+    background: rgba(0, 255, 249, 0.2);
+    border: 1px solid var(--accent-color);
+}
+
+/* 主对话区域样式 */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--primary-color);
+}
+
+.chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-actions button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.header-actions button:hover {
+    background: rgba(0, 255, 249, 0.1);
+}
+
+/* 消息区域样式 */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.message-content {
+    flex: 1;
+    max-width: 80%;
+}
+
+.message-text {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.user-message .message-text {
+    background: rgba(0, 255, 249, 0.1);
+}
+
+/* 代码块样式 */
+.message-text pre {
+    margin-top: 1rem;
+    background: #1a1a2e;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent-color);
+}
+
+.message-text code {
+    color: #00fff9;
+    font-family: 'Fira Code', monospace;
+}
+
+/* 输入区域样式 */
+.chat-input {
+    padding: 1rem;
+    border-top: 1px solid var(--accent-color);
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    flex: 1;
+    background: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: var(--text-color);
+    resize: none;
+    min-height: 20px;
+    max-height: 200px;
+}
+
+.input-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input-actions button {
+    background: none;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.input-actions button:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.quick-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.quick-btn {
+    background: rgba(0, 255, 249, 0.1);
+    border: none;
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.quick-btn:hover {
+    background: rgba(0, 255, 249, 0.2);
+} 
+
+/* 联系我们样式 */
+.contact-info {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.info-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.contact-form {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.8rem;
+    border-radius: 8px;
+    color: var(--text-color);
+}
+
+.submit-btn {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 255, 249, 0.3);
+}
+
+/* 底部区域样式 */
+.footer {
+    background: var(--secondary-color);
+    padding: 4rem 0 0;
+    margin-top: 4rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 255, 249, 0.2);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--accent-color);
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    text-align: center;
+} 
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 255, 249, 0.3);
+    transition: all 0.3s;
+}
+
+.member-card:hover .member-photo {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 249, 0.5);
+} 

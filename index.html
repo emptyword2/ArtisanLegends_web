@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小作坊传奇</title>
+    <!-- CDN 引入 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="logo-container">
+                    <i class="fas fa-cog rotating-gear"></i>
+                    <i class="fas fa-code"></i>
+                    <span>小作坊传奇</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">团队介绍</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">作品展示</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ai-chat">AI对话</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 各个部分的容器 -->
+    <div id="home" class="section">
+        <div class="hero-carousel">
+            <!-- 轮播组件 -->
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-content">
+                            <img src="images/364eaecf5ab41849cd5e39c9dad3cef.jpg" alt="团队实验照片" class="carousel-image">
+                            <div class="tech-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-content">
+                            <img src="images/9340ac0e99f59a1373fcf0eac24fab3.jpg" alt="获奖瞬间" class="carousel-image">
+                            <div class="tech-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-content">
+                            <img src="images/fa4b59e0fb262e68c0b6d15cb6cd27b.jpg" alt="工作环境" class="carousel-image">
+                            <div class="tech-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 团队介绍部分 -->
+    <div id="team" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">团队介绍</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="team-info" data-aos="fade-left">
+                        <h3>创新团队</h3>
+                        <div class="member-cards">
+                            <div class="member-card">
+                                <div class="member-avatar">
+                                    <img src="images/team/linds.jpg" alt="林东升" class="member-photo">
+                                </div>
+                                <h4>林东升</h4>
+                                <p>团队负责人，主要研究方向为机器人控制与智能系统</p>
+                                <div class="member-skills">
+                                    <span>机器人控制</span>
+                                    <span>运动规划</span>
+                                    <span>智能算法</span>
+                                </div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-avatar">
+                                    <img src="images/team/zhouqh.jpg" alt="周啟航" class="member-photo">
+                                </div>
+                                <h4>周啟航</h4>
+                                <p>视觉算法工程师，专注于计算机视觉与深度学习</p>
+                                <div class="member-skills">
+                                    <span>深度学习</span>
+                                    <span>计算机视觉</span>
+                                    <span>目标检测</span>
+                                </div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-avatar">
+                                    <img src="images/team/gaoyt.jpg" alt="高宇童" class="member-photo">
+                                </div>
+                                <h4>高宇童</h4>
+                                <p>硬件设计师，负责机械结构与电路设计</p>
+                                <div class="member-skills">
+                                    <span>电路设计</span>
+                                    <span>PCB设计</span>
+                                    <span>3D建模</span>
+                                </div>
+                            </div>
+                            <div class="member-card">
+                                <div class="member-avatar">
+                                    <img src="images/team/yanhp.jpg" alt="颜辉鹏" class="member-photo">
+                                </div>
+                                <h4>颜辉鹏</h4>
+                                <p>软件工程师，专注于嵌入式系统开发</p>
+                                <div class="member-skills">
+                                    <span>嵌入式开发</span>
+                                    <span>实时系统</span>
+                                    <span>驱动开发</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品展示区 -->
+    <div id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">作品展示</h2>
+            
+            <!-- 项目分类过滤器 -->
+            <div class="project-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="car">智能小车</button>
+                <button class="filter-btn" data-filter="robot">机器人</button>
+                <button class="filter-btn" data-filter="innovation">创新项目</button>
+            </div>
+            
+            <!-- 项目展示网格 -->
+            <div class="project-grid">
+                <!-- 智能小车项目 -->
+                <div class="project-card" data-category="car" data-aos="fade-up">
+                    <div class="project-preview">
+                        <div class="model-viewer" id="carModel">
+                            <!-- 3D模型将在这里渲染 -->
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-details-btn">查看详情</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>智能避障小车</h3>
+                        <p>基于机器视觉的智能避障系统</p>
+                        <div class="project-tags">
+                            <span>Arduino</span>
+                            <span>机器视觉</span>
+                            <span>深度学习</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 机器人项目 -->
+                <div class="project-card" data-category="robot" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-preview">
+                        <div class="model-viewer" id="robotModel">
+                            <!-- 3D模型将在这里渲染 -->
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-details-btn">查看详情</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>多关节机械臂</h3>
+                        <p>具有视觉识别能力的智能抓取系统</p>
+                        <div class="project-tags">
+                            <span>ROS</span>
+                            <span>机器人控制</span>
+                            <span>计算机视觉</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 项目详情模态框 -->
+        <div class="project-modal" id="projectModal">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-gallery">
+                        <!-- 图片展示区 -->
+                    </div>
+                    <div class="modal-info">
+                        <h2></h2>
+                        <div class="tech-stack"></div>
+                        <div class="project-description"></div>
+                        <div class="development-process">
+                            <h3>开发过程</h3>
+                            <div class="timeline"></div>
+                        </div>
+                        <div class="project-achievements">
+                            <h3>项目成果</h3>
+                            <ul class="achievements-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI对话平台 -->
+    <div id="ai-chat" class="section">
+        <div class="container-fluid">
+            <div class="chat-container">
+                <!-- 左侧边栏 -->
+                <div class="chat-sidebar">
+                    <button class="new-chat-btn">
+                        <i class="fas fa-plus"></i> 新建对话
+                    </button>
+                    
+                    <!-- 历史对话列表 -->
+                    <div class="chat-history">
+                        <div class="history-group">
+                            <div class="history-header">
+                                <i class="fas fa-clock"></i>
+                                <span>最近对话</span>
+                            </div>
+                            <div class="history-items">
+                                <div class="history-item active">
+                                    <i class="fas fa-comments"></i>
+                                    <span>智能小车控制系统设计</span>
+                                </div>
+                                <div class="history-item">
+                                    <i class="fas fa-comments"></i>
+                                    <span>机器人运动规划算法</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 对话分类 -->
+                        <div class="history-group">
+                            <div class="history-header">
+                                <i class="fas fa-tags"></i>
+                                <span>对话分类</span>
+                            </div>
+                            <div class="category-items">
+                                <div class="category-item">
+                                    <i class="fas fa-microchip"></i>
+                                    <span>硬件开发</span>
+                                </div>
+                                <div class="category-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>软件编程</span>
+                                </div>
+                                <div class="category-item">
+                                    <i class="fas fa-robot"></i>
+                                    <span>机器人技术</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 主对话区域 -->
+                <div class="chat-main">
+                    <!-- 对话标题 -->
+                    <div class="chat-header">
+                        <h2>智能小车控制系统设计</h2>
+                        <div class="header-actions">
+                            <button class="clear-btn">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <button class="export-btn">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话内容区 -->
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- AI消息 -->
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    你好！我是AI助手，很高兴为你提供帮助。请问你有什么问题？
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 用户消息 -->
+                        <div class="message user-message">
+                            <div class="message-content">
+                                <div class="message-text">
+                                    我想了解智能小车的PID控制算法
+                                </div>
+                            </div>
+                            <div class="message-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- AI消息带代码 -->
+                        <div class="message ai-message">
+                            <div class="message-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    这是一个基本的PID控制算法实现：
+                                    <pre><code class="language-cpp">
+float Kp = 1.0, Ki = 0.1, Kd = 0.01;
+float error = 0, lastError = 0;
+float integral = 0;
+
+float pidControl(float setpoint, float measurement) {
+    error = setpoint - measurement;
+    integral += error;
+    float derivative = error - lastError;
+    
+    float output = Kp * error + 
+                   Ki * integral + 
+                   Kd * derivative;
+    
+    lastError = error;
+    return output;
+}
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 输入区域 -->
+                    <div class="chat-input">
+                        <div class="input-container">
+                            <textarea 
+                                id="userInput" 
+                                placeholder="输入你的问题..."
+                                rows="1"
+                            ></textarea>
+                            <div class="input-actions">
+                                <button class="upload-btn">
+                                    <i class="fas fa-paperclip"></i>
+                                </button>
+                                <button class="send-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn">代码示例</button>
+                            <button class="quick-btn">原理解释</button>
+                            <button class="quick-btn">调试建议</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们 -->
+    <div id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">联系我们</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-content">
+                                <h3>地址</h3>
+                                <p>某某省某某市某某区某某街道123号</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-content">
+                                <h3>邮箱</h3>
+                                <p>contact@example.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="info-content">
+                                <h3>电话</h3>
+                                <p>+86 123 4567 8900</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="主题">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="您的留言" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> 发送消息
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部区域 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3>关于我们</h3>
+                        <p>小作坊传奇是一个充满创新和激情的技术团队，致力于探索人工智能和机器人技术的沿领域。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3>快速链接</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" target="_blank">技术博客</a></li>
+                            <li><a href="#" target="_blank">开源项目</a></li>
+                            <li><a href="#" target="_blank">加入我们</a></li>
+                            <li><a href="#" target="_blank">合作伙伴</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3>关注我们</h3>
+                        <div class="social-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-weixin"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-weibo"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-zhihu"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 小作坊传奇. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
